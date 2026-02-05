@@ -12,6 +12,10 @@ const Subcats = new Schema({
         required : true,
         unique : true,
         index : true
+    },
+    online :{
+        type : Boolean,
+        required : true,
     }
 })
 

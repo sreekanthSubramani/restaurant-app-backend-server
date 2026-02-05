@@ -9,11 +9,16 @@ import { Usermodel } from './Models/Usermodel.js'
 import { Category } from './Models/CategoryModel.js'
 import { Subcategory} from './Models/SubCategoryModel.js'
 import {Items} from './Models/Menu Models/ItemModel.js'
+import { TheAddonModel } from './Models/Menu Models/AddonModel.js'
 
 //handlers
 import mailToUser from './EmailTCP/mail.js'
 import loginHandler from './LoginHandler/Loginhandler.js'
 import categoryAdder from './CategoryHandler/CategoryAdder.js'
+import subCatHandler from './SubcategoryHandler/SubcategoryHandler.js'
+import itemHandlers from './Itemhandler/Itemhandler.js' 
+import addonRouter from './AddonHandler/AddonHandler.js'
+
 
 const app = express()
 app.use(cors())
@@ -23,8 +28,11 @@ app.use(express.json())
 app.use(mailToUser)
 app.use(loginHandler)
 app.use(categoryAdder)
+app.use(subCatHandler)
+app.use(itemHandlers)
+app.use(addonRouter)
 
-const server = http.createServer(app)
+const server = http.createServer(app)   
 
 mongooseDB()
 
@@ -35,3 +43,5 @@ server.listen(4444, (e)=>{
         console.log('server not working')
     }
 })
+
+
