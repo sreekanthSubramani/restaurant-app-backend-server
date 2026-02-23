@@ -19,7 +19,7 @@ addonRouter.post('/add/addons/group', async (req, res, next)=>{
                             addOnName : addOnName,
                             addOnPrice : addOnPrice
                         }
-                    ]
+                    ]   
                 }
             ]
         })

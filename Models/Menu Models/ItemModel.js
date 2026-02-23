@@ -21,6 +21,11 @@ const Itemmodel = new Schema({
         type : mongoose.Schema.Types.ObjectId,
         ref : "Subcategory",
         required : true
+    },
+    addOnlink : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "AddonModel",
+        required : false
     }
 
 })

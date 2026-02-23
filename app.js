@@ -18,7 +18,9 @@ import categoryAdder from './CategoryHandler/CategoryAdder.js'
 import subCatHandler from './SubcategoryHandler/SubcategoryHandler.js'
 import itemHandlers from './Itemhandler/Itemhandler.js' 
 import addonRouter from './AddonHandler/AddonHandler.js'
-
+import imageUploadRoute from './ImageHandler/Imagehandler.js'
+import showAllAddons from './AddonHandler/FetchallAddons.js'
+import itemShowHandler from './Itemshowers/Itemstoshow.js'
 
 const app = express()
 app.use(cors())
@@ -31,6 +33,10 @@ app.use(categoryAdder)
 app.use(subCatHandler)
 app.use(itemHandlers)
 app.use(addonRouter)
+app.use(imageUploadRoute)
+app.use(showAllAddons)
+app.use(itemShowHandler)
+
 
 const server = http.createServer(app)   
 

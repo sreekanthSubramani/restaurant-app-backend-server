@@ -4,9 +4,9 @@ import express from 'express'
 const categoryAdder = express.Router()
 
 
-categoryAdder.post('/addCategory', async (req, res, next)=>{
+categoryAdder.post('/addCategory', async (req, res)=>{
 
-    const {categoryName, collection, delivery, inStock, images = "test image"} = req.body
+    const {categoryName, collection, delivery, inStock, images} = req.body
 
     const createCategory = await Category.create({
         categoryName,
