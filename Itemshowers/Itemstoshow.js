@@ -7,7 +7,7 @@ const itemShowHandler = express.Router()
 
 itemShowHandler.get('/show/items', async (req ,res)=>{
     try{
-        const showItems = await Items.find().lean()
+        const showItems = await Items.find().populate('category','categoryName').lean()
         if(showItems){
             return res.status(200).json({msg : showItems})
         }
