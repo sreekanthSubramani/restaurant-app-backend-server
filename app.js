@@ -23,6 +23,7 @@ import showAllAddons from './AddonHandler/FetchallAddons.js'
 import itemShowHandler from './Itemshowers/Itemstoshow.js'
 import sendCat from './CategoryHandler/Sendcategory.js'
 import sendSubCat from './SubcategoryHandler/SendSubcategory.js'
+import addOnLinker from './AddonHandler/LinkAddon.js'
 
 
 
@@ -42,6 +43,7 @@ app.use(showAllAddons)
 app.use(itemShowHandler)
 app.use(sendCat)
 app.use(sendSubCat)
+app.use(addOnLinker)
 
 const server = http.createServer(app)   
 

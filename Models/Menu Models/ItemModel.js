@@ -25,10 +25,12 @@ const Itemmodel = new Schema({
     addOnlink : {
         type : mongoose.Schema.Types.ObjectId,
         ref : "AddonModel",
-        required : false
+        default: null
     }
 
 })
 
 
 export const Items = model('Items', Itemmodel)
+
+
